@@ -26,9 +26,9 @@ class productcontroller extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name'=>  'required',
-            'slug'=>  'required',
-            'price'    => 'required'
+            'name'   =>  'required',
+            'slug'   =>  'required',
+            'price' => 'required'
         ]);
         return product::create($request->all());
     }
@@ -54,7 +54,7 @@ class productcontroller extends Controller
     public function update(Request $request, $id)
     {
         $product=product::find($id);
-        $product->update($request->all);
+        $product->update($request->all());
         return $product;
 
     }
